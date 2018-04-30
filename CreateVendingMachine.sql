@@ -8,7 +8,7 @@ GO
 
 IF NOT EXISTS (SELECT * FROM sys.Schemas WHERE name = 'VendingMachine')
 BEGIN
-	EXEC('CREATE SCHEMA VendingMachine')
+	EXEC('CREATE SCHEMA VendingMachine');
 END
 
 IF OBJECT_ID('VendingMachine.ItemQueues', 'U') IS NOT NULL
