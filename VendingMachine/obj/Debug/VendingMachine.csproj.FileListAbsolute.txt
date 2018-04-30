@@ -1,0 +1,26 @@
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.CoreCompileInputs.cache
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe.config
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\VendingMachine.exe
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\VendingMachine.pdb
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csprojResolveAssemblyReference.cache
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.CoreCompileInputs.cache
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.exe
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.pdb
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.OutputStrings.resources
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.cache
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\nunit.framework.dll
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\nunit.framework.pdb
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\bin\Debug\nunit.framework.xml
+C:\Users\ktang\Desktop\Misc\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.CopyComplete
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\nunit.framework.dll
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\nunit.framework.pdb
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\bin\Debug\nunit.framework.xml
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.OutputStrings.resources
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.GenerateResource.cache
+C:\Users\Kevin\Desktop\Software Development\VendingMachine\VendingMachine\obj\Debug\VendingMachine.csproj.CopyComplete
