@@ -10,32 +10,33 @@ namespace VendingMachine
         {
             while (true)
             {
-                //Might wanna get rid of this long line of if's even if this is for testing purposes...
-                //Do i need to check for input is null?
                 var input = Console.ReadLine();
-                if (input != null && input[0] == '$') //To input money, put dollar sign first
+                if (input != "")
                 {
-                    if (double.TryParse(input.Substring(1), out var din))
+                    if (input[0] == '$') //To input money, put dollar sign first
                     {
-                        VendingMachine.InsertMoney(din);
-                    }
-                }
-                else
-                {
-                    input = input.ToUpper();
-                    if (input == "R") //debugging only
-                    {
-                        Console.WriteLine("----- DEBUG Trash Report -----");
-                        VendingMachine.Trash.Report();
-                        Console.WriteLine("---------------------------");
-                    }
-                    if (VendingMachine.Shelves.ContainsKey(input)) //Do I need validation because of hardware limitations?
-                    {
-                        VendingMachine.SelectItem(input);
+                        if (double.TryParse(input.Substring(1), out var din))
+                        {
+                            VendingMachine.InsertMoney(din);
+                        }
                     }
                     else
                     {
-                        Console.WriteLine("[DEBUG] Item Key DNE"); //remove if/else if no validation needed
+                        input = input.ToUpper();
+                        if (input == "R") //DEBUGGING
+                        {
+                            Console.WriteLine("----- [DEBUG] Trash Report -----");
+                            VendingMachine.Trash.Report();
+                            Console.WriteLine("--------------------------------");
+                        }
+                        if (VendingMachine.Shelves.ContainsKey(input))
+                        {
+                            VendingMachine.SelectItem(input);
+                        }
+                        else
+                        {
+                            Console.WriteLine("[DEBUG] Item Key DNE"); //remove if/else if no validation needed
+                        }
                     }
                 }
             }

@@ -10,10 +10,6 @@ namespace VendingMachine
         public IVendingMachineState NoMoneyInsertedState { get; }
         public IVendingMachineState CurrentState { get; set; }
 
-        //private int _shelfSize = Convert.ToInt32(ConfigurationManager.AppSettings["ShelfSize"]); //Would only be relevant for testing if no validation needed
-        //private int _queueSize = Convert.ToInt32(ConfigurationManager.AppSettings["QueueSize"]); //Irrelevant if vending machine can track when empty [dont forget to del from app.config]
-        //public Item ItemSelected { get; set; } //might not be needed if it's not needed to be locked in
-
         public Dictionary<string, ItemQueue> Shelves = new Dictionary<string, ItemQueue>();
         public double MoneyInserted { get; set; }
         public TrashCompartment Trash = new TrashCompartment();
@@ -28,6 +24,10 @@ namespace VendingMachine
             var itemQueue = Shelves[itemInput];
             if (itemQueue.IsInStock()) { 
                 CurrentState.SelectItem(itemQueue);
+            }
+            else
+            {
+                MachineOutput.DisplaySoldOutError();
             }
         }
 

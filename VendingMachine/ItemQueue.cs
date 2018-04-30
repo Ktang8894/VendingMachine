@@ -9,16 +9,12 @@ namespace VendingMachine
     public class ItemQueue
     {
         private Queue<Item> _itemQueue;
-        private double _price { get; set; } //Price of an item is determined by the owner, not the item
+        private double _price { get; set; }
         
+        //For debugging
         public void Status()
         {
-            Console.WriteLine("--- Current Item Queue State ---");
-            Console.WriteLine("Dispensing Item: " + _itemQueue.Peek().Name);
-            Console.WriteLine("Flavor: " + _itemQueue.Peek().Flavor);
-            Console.WriteLine("Wrapper Color: " + _itemQueue.Peek().WrapperColor);
-            Console.WriteLine("Remaining in queue: " + (_itemQueue.Count - 1));
-            Console.WriteLine("--------------------------------");
+            MachineOutput.Debug_QueueStatus(_itemQueue.Peek().Name, _itemQueue.Peek().Flavor, _itemQueue.Peek().WrapperColor, (_itemQueue.Count - 1));
         }
 
         public double CheckPrice()

@@ -79,11 +79,11 @@ namespace VendingMachine {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to OUT OF STOCK.
+        ///   Looks up a localized string similar to SOLD OUT.
         /// </summary>
-        internal static string OOS {
+        internal static string SoldOut {
             get {
-                return ResourceManager.GetString("OOS", resourceCulture);
+                return ResourceManager.GetString("SoldOut", resourceCulture);
             }
         }
         

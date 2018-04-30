@@ -22,5 +22,21 @@ namespace VendingMachine
         {
             Console.WriteLine(OutputStrings.InsufficientFunds, difference);
         }
+
+        public static void DisplaySoldOutError()
+        {
+            Console.WriteLine(OutputStrings.SoldOut);
+        }
+
+        //Probably delete this?
+        public static void Debug_QueueStatus(string name, string flavor, string wrapperColor, int remaining)
+        {
+            Console.WriteLine("--- Current Item Queue State ---");
+            Console.WriteLine("Dispensing Item: " + name);
+            Console.WriteLine("Flavor: " + flavor);
+            Console.WriteLine("Wrapper Color: " + wrapperColor);
+            Console.WriteLine("Remaining in queue: " + remaining);
+            Console.WriteLine("--------------------------------");
+        }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
 
 //Generate items using getVendingmachine or whatever
@@ -9,8 +8,6 @@ namespace VendingMachine
     class Stocker
     {
         private VendingMachine _vendingMachine;
-        //private readonly int _numShelves = Convert.ToInt32(ConfigurationManager.AppSettings["NumShelves"]);
-        //private readonly int _shelfSize = Convert.ToInt32(ConfigurationManager.AppSettings["ShelfSize"]);
         private readonly string[] _flavors = ConfigurationManager.AppSettings["Flavors"].Split(',');
         private readonly string[] _wrapperColors = ConfigurationManager.AppSettings["WrapperColors"].Split(',');
         private readonly int _queueSize = Convert.ToInt32(ConfigurationManager.AppSettings["QueueSize"]);

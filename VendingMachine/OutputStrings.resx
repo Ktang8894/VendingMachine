@@ -123,8 +123,8 @@
   <data name="ItemCost" xml:space="preserve">
     <value>${0}</value>
   </data>
-  <data name="OOS" xml:space="preserve">
-    <value>OUT OF STOCK</value>
+  <data name="SoldOut" xml:space="preserve">
+    <value>SOLD OUT</value>
   </data>
   <data name="TotalMoney" xml:space="preserve">
     <value>TOTAL: $</value>
