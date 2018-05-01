@@ -17,30 +17,37 @@ BEGIN
 		EXEC('CREATE SCHEMA VendingMachine');
 	END
 
-	IF OBJECT_ID('VendingMachine.Item', 'U') IS NOT NULL
-		DROP TABLE VendingMachine.Item;
+	IF OBJECT_ID('VendingMachine.ItemQueues', 'U') IS NOT NULL
+		DROP TABLE VendingMachine.ItemQueues;
 
-	IF OBJECT_ID('VendingMachine.Flavor', 'U') IS NOT NULL
-		DROP TABLE VendingMachine.Flavor;
+	IF OBJECT_ID('VendingMachine.Items', 'U') IS NOT NULL
+		DROP TABLE VendingMachine.Items;
 
-	IF OBJECT_ID('VendingMachine.WrapperColor', 'U') IS NOT NULL
-		DROP TABLE VendingMachine.WrapperColor;
+	IF OBJECT_ID('VendingMachine.Flavors', 'U') IS NOT NULL
+		DROP TABLE VendingMachine.Flavors;
 
-	CREATE TABLE VendingMachine.Flavor (
+	IF OBJECT_ID('VendingMachine.WrapperColors', 'U') IS NOT NULL
+		DROP TABLE VendingMachine.WrapperColors;
+
+	CREATE TABLE VendingMachine.Flavors (
 		FlavorId int NOT NULL IDENTITY(1, 1) PRIMARY KEY,
 		Flavor varchar(20) UNIQUE NOT NULL
 	);
 
-	CREATE TABLE VendingMachine.WrapperColor (
+	CREATE TABLE VendingMachine.WrapperColors (
 		WrapperColorId int NOT NULL IDENTITY(1, 1) PRIMARY KEY,
 		WrapperColor varchar(20) UNIQUE NOT NULL
 	);
 
-	CREATE TABLE VendingMachine.Item (
+	CREATE TABLE VendingMachine.Items (
 		ItemId int NOT NULL IDENTITY(1, 1) PRIMARY KEY,
 		Name varchar(20) UNIQUE NOT NULL,
-		FlavorId int NOT NULL FOREIGN KEY REFERENCES VendingMachine.Flavor(FlavorId),
-		WrapperColorId int NOT NULL FOREIGN KEY REFERENCES VendingMachine.WrapperColor(WrapperColorId),
+		FlavorId int NOT NULL FOREIGN KEY REFERENCES VendingMachine.Flavors(FlavorId),
+		WrapperColorId int NOT NULL FOREIGN KEY REFERENCES VendingMachine.WrapperColors(WrapperColorId),
+	);
+
+	CREATE TABLE VendingMachine.ItemQueues (
+		ItemId int UNIQUE NOT NULL FOREIGN KEY REFERENCES VendingMachine.Items(itemId),
 		Price decimal(4, 2),
 		StockCount int NOT NULL,
 		TrashCount int NOT NULL
