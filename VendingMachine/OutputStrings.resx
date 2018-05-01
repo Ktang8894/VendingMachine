@@ -117,16 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CurrentBalance" xml:space="preserve">
+    <value>CURRENT BALANCE: $</value>
+  </data>
+  <data name="Instructions" xml:space="preserve">
+    <value>To insert money, enter '$' followed by the currency value
+To select an item, enter item coordinates, i.e. 'A1' (default range [A-D, 1-5])</value>
+  </data>
   <data name="InsufficientFunds" xml:space="preserve">
     <value>INSUFFICIENT FUNDS (${0})</value>
   </data>
   <data name="ItemCost" xml:space="preserve">
     <value>${0}</value>
   </data>
+  <data name="QueueStatus" xml:space="preserve">
+    <value>--- [DEBUG] Current Item Queue State ---
+Dispensing Item: {0}
+Flavor: {1}
+Wrapper Color: {2}
+Remaining in queue: {3}
+----------------------------------------</value>
+  </data>
   <data name="SoldOut" xml:space="preserve">
     <value>SOLD OUT</value>
   </data>
-  <data name="TotalMoney" xml:space="preserve">
-    <value>TOTAL: $</value>
+  <data name="TrashIsEmpty" xml:space="preserve">
+    <value>TRASH COMPARTMENT EMPTY</value>
+  </data>
+  <data name="TrashReport" xml:space="preserve">
+    <value>{0}: {1}</value>
+  </data>
+  <data name="TrashReportFooter" xml:space="preserve">
+    <value>-------------------</value>
+  </data>
+  <data name="TrashReportHeader" xml:space="preserve">
+    <value>--- TRASH REPORT---</value>
   </data>
 </root>

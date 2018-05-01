@@ -1,16 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using VendingMachine.States;
 
 namespace VendingMachine
 {
     public class VendingMachine
     {
-        public IVendingMachineState MoneyInsertedState { get; }
-        public IVendingMachineState NoMoneyInsertedState { get; }
+        public IVendingMachineState MoneyInsertedState { get; set; }
+        public IVendingMachineState NoMoneyInsertedState { get; set; }
         public IVendingMachineState CurrentState { get; set; }
 
-        public Dictionary<string, ItemQueue> Shelves = new Dictionary<string, ItemQueue>();
+        public Dictionary<string, ItemQueue> ItemQueues = new Dictionary<string, ItemQueue>();
         public double MoneyInserted { get; set; }
         public TrashCompartment Trash = new TrashCompartment();
 
@@ -21,7 +20,9 @@ namespace VendingMachine
 
         public void SelectItem(string itemInput)
         {
-            var itemQueue = Shelves[itemInput];
+            if (!ItemQueues.ContainsKey(itemInput)) { return; }
+
+            var itemQueue = ItemQueues[itemInput];
             if (itemQueue.IsInStock()) { 
                 CurrentState.SelectItem(itemQueue);
             }
@@ -38,9 +39,9 @@ namespace VendingMachine
 
         public VendingMachine()
         {
+            MachineOutput.DisplayInstructions();
             MoneyInsertedState = new MoneyInsertedState(this);
             NoMoneyInsertedState = new NoMoneyInsertedState(this);
-            Console.WriteLine("[DEBUG] Enter currency value following a '$' or enter item coordinates (default A-D, 1-5)");
             CurrentState = new NoMoneyInsertedState(this);
         }
     }

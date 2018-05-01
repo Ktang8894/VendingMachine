@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace VendingMachine.States
+﻿namespace VendingMachine.States
 {
     class NoMoneyInsertedState : IVendingMachineState
     {
@@ -15,7 +12,7 @@ namespace VendingMachine.States
         public void InsertMoney(double money)
         {
             _vendingMachine.MoneyInserted += money;
-            MachineOutput.DisplayTotalMoney(_vendingMachine.MoneyInserted);
+            MachineOutput.DisplayCurrentBalance(_vendingMachine.MoneyInserted);
             _vendingMachine.CurrentState = _vendingMachine.MoneyInsertedState;
         }
 

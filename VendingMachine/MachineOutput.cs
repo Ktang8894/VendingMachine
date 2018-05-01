@@ -8,9 +8,9 @@ namespace VendingMachine
 {
     public static class MachineOutput
     {
-        public static void DisplayTotalMoney(double totalMoney)
+        public static void DisplayCurrentBalance(double currentBalance)
         {
-            Console.WriteLine(OutputStrings.TotalMoney + totalMoney);
+            Console.WriteLine(OutputStrings.CurrentBalance + currentBalance);
         }
 
         public static void DisplayItemCost(double price)
@@ -28,15 +28,24 @@ namespace VendingMachine
             Console.WriteLine(OutputStrings.SoldOut);
         }
 
-        //Probably delete this?
-        public static void Debug_QueueStatus(string name, string flavor, string wrapperColor, int remaining)
+        public static void DisplayInstructions()
         {
-            Console.WriteLine("--- Current Item Queue State ---");
-            Console.WriteLine("Dispensing Item: " + name);
-            Console.WriteLine("Flavor: " + flavor);
-            Console.WriteLine("Wrapper Color: " + wrapperColor);
-            Console.WriteLine("Remaining in queue: " + remaining);
-            Console.WriteLine("--------------------------------");
+            Console.WriteLine(OutputStrings.Instructions);
+        }
+
+        public static void ReportTrashStatus(Dictionary<string, int> wrappers)
+        {
+            Console.WriteLine(OutputStrings.TrashReportHeader);
+            foreach (KeyValuePair<string, int> wrapper in wrappers)
+            {
+                Console.WriteLine(OutputStrings.TrashReport, wrapper.Key, wrapper.Value);
+            }
+            Console.WriteLine(OutputStrings.TrashReportFooter);
+        }
+
+        public static void QueueStatus(string name, string flavor, string wrapperColor, int remaining)
+        {
+            Console.WriteLine(OutputStrings.QueueStatus, name, flavor, wrapperColor, remaining);
         }
     }
 }

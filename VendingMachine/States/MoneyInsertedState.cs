@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace VendingMachine.States
+﻿namespace VendingMachine.States
 {
     class MoneyInsertedState : IVendingMachineState
     {
@@ -15,7 +12,7 @@ namespace VendingMachine.States
         public void InsertMoney(double money)
         {
             _vendingMachine.MoneyInserted += money;
-            MachineOutput.DisplayTotalMoney(_vendingMachine.MoneyInserted);
+            MachineOutput.DisplayCurrentBalance(_vendingMachine.MoneyInserted);
         }
 
         public void SelectItem(ItemQueue itemQueue) 
@@ -26,8 +23,8 @@ namespace VendingMachine.States
             }
             else
             {
-                itemQueue.Status(); //Debug
-                _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem()); //Makes sense that this is one transaction
+                itemQueue.Status(); //FOR DEBUGGING PURPOSES
+                _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem().Name);
                 _vendingMachine.MoneyInserted = 0;
                 _vendingMachine.SetState(_vendingMachine.NoMoneyInsertedState);
             }

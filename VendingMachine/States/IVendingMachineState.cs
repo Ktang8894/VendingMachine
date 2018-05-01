@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace VendingMachine.States
+﻿namespace VendingMachine.States
 {
     public interface IVendingMachineState
     {

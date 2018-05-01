@@ -10,33 +10,20 @@ namespace VendingMachine
         {
             while (true)
             {
-                var input = Console.ReadLine();
+                var input = Console.ReadLine().ToUpper();
                 if (input != "")
                 {
-                    if (input[0] == '$') //To input money, put dollar sign first
+                    if (input[0] == '$' && double.TryParse(input.Substring(1), out var money))
                     {
-                        if (double.TryParse(input.Substring(1), out var din))
-                        {
-                            VendingMachine.InsertMoney(din);
-                        }
+                        VendingMachine.InsertMoney(money);
+                    }
+                    else if (input.ToUpper() == "TRASH")
+                    {
+                        VendingMachine.Trash.Report();
                     }
                     else
                     {
-                        input = input.ToUpper();
-                        if (input == "R") //DEBUGGING
-                        {
-                            Console.WriteLine("----- [DEBUG] Trash Report -----");
-                            VendingMachine.Trash.Report();
-                            Console.WriteLine("--------------------------------");
-                        }
-                        if (VendingMachine.Shelves.ContainsKey(input))
-                        {
-                            VendingMachine.SelectItem(input);
-                        }
-                        else
-                        {
-                            Console.WriteLine("[DEBUG] Item Key DNE"); //remove if/else if no validation needed
-                        }
+                        VendingMachine.SelectItem(input);
                     }
                 }
             }

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace VendingMachine
 {
@@ -11,10 +7,9 @@ namespace VendingMachine
         private Queue<Item> _itemQueue;
         private double _price { get; set; }
         
-        //For debugging
-        public void Status()
+        public void Status() //For debugging purposes
         {
-            MachineOutput.Debug_QueueStatus(_itemQueue.Peek().Name, _itemQueue.Peek().Flavor, _itemQueue.Peek().WrapperColor, (_itemQueue.Count - 1));
+            MachineOutput.QueueStatus(_itemQueue.Peek().Name, _itemQueue.Peek().Flavor, _itemQueue.Peek().WrapperColor, (_itemQueue.Count - 1));
         }
 
         public double CheckPrice()
@@ -29,7 +24,6 @@ namespace VendingMachine
 
         public Item DispenseItem()
         {
-            //Check for null? Might be good to do so in vendingmachine.cs
             return _itemQueue.Dequeue();
         }
 

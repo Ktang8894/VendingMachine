@@ -61,6 +61,25 @@ namespace VendingMachine {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to CURRENT BALANCE: $.
+        /// </summary>
+        internal static string CurrentBalance {
+            get {
+                return ResourceManager.GetString("CurrentBalance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to To insert money, enter &apos;$&apos; followed by the currency value
+        ///To select an item, enter item coordinates, i.e. &apos;A1&apos; (default range [A-D, 1-5]).
+        /// </summary>
+        internal static string Instructions {
+            get {
+                return ResourceManager.GetString("Instructions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSUFFICIENT FUNDS (${0}).
         /// </summary>
         internal static string InsufficientFunds {
@@ -79,6 +98,20 @@ namespace VendingMachine {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to --- [DEBUG] Current Item Queue State ---
+        ///Dispensing Item: {0}
+        ///Flavor: {1}
+        ///Wrapper Color: {2}
+        ///Remaining in queue: {3}
+        ///----------------------------------------.
+        /// </summary>
+        internal static string QueueStatus {
+            get {
+                return ResourceManager.GetString("QueueStatus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SOLD OUT.
         /// </summary>
         internal static string SoldOut {
@@ -88,11 +121,38 @@ namespace VendingMachine {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to TOTAL: $.
+        ///   Looks up a localized string similar to TRASH COMPARTMENT EMPTY.
         /// </summary>
-        internal static string TotalMoney {
+        internal static string TrashIsEmpty {
             get {
-                return ResourceManager.GetString("TotalMoney", resourceCulture);
+                return ResourceManager.GetString("TrashIsEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0}: {1}.
+        /// </summary>
+        internal static string TrashReport {
+            get {
+                return ResourceManager.GetString("TrashReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to -------------------.
+        /// </summary>
+        internal static string TrashReportFooter {
+            get {
+                return ResourceManager.GetString("TrashReportFooter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to --- TRASH REPORT---.
+        /// </summary>
+        internal static string TrashReportHeader {
+            get {
+                return ResourceManager.GetString("TrashReportHeader", resourceCulture);
             }
         }
     }
