@@ -14,7 +14,7 @@ NoMoneyInsertedState.cs
 
 
 Database Setup
-1. In your database, execute CreatevendingMachineStoredProc.sql
+1. In your database, execute CreateVendingMachineStoredProc.sql
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
 	- Creates the Colors, Flavors, ItemQueues, and Items tables
