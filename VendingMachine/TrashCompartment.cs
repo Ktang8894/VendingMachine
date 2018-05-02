@@ -6,8 +6,9 @@ namespace VendingMachine
     {
         private Dictionary<string, int> Wrappers = new Dictionary<string, int>();
  
-        public void AddWrapper(string wrapper)
+        public void AddWrapper(Item item)
         {
+            string wrapper = item.Name;
             if (Wrappers.ContainsKey(wrapper))
             {
                 Wrappers[wrapper]++;

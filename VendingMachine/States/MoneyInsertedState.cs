@@ -24,7 +24,7 @@
             else
             {
                 itemQueue.Status(); //FOR DEBUGGING
-                _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem().Name);
+                _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem());
                 _vendingMachine.MoneyInserted = 0;
                 _vendingMachine.SetState(_vendingMachine.NoMoneyInsertedState);
             }
