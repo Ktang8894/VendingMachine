@@ -31,7 +31,7 @@ Written in C# (.NET Framework 4.6.1) using Visual Studio 2017
 Database design can be seen in **/DatabaseDesign/VendingMachine_Schema.jpg**
 
 ### Setup
-1. In your database, execute the script in CreateVendingMachineStoredProc.sql to create the *VendingMachine.CreateVendingMachine* stored procedure
+1. In your database, execute the script in CreateVendingMachineStoredProc.sql to create the VendingMachine.CreateVendingMachine stored procedure
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
 	- Creates the Items Table
