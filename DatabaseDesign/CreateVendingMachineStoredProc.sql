@@ -25,7 +25,7 @@ BEGIN
 		Name varchar(20) UNIQUE NOT NULL,
 		Flavor varchar(20) NOT NULL,
 		WrapperColor varchar(20) NOT NULL,
-		Price decimal(4, 2),
+		Price decimal(4, 2) NOT NULL,
 		StockCount int NOT NULL,
 		TrashCount int NOT NULL
 	);
