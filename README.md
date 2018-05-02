@@ -37,6 +37,6 @@ Database design can be seen in **/DatabaseDesign/VendingMachine_Schema.jpg**
 	- Creates the Items Table
 3. To populate the table with test values, execute the query in **/DatabaseDesign/PouplateTables.sql**
 
-## 3. Select Statements
+## 3. SELECT Statements
 
 Sample select statements can be found in **/DatabaseDesign/SelectStatements.sql**
