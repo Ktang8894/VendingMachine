@@ -4,7 +4,7 @@ namespace VendingMachine
 {
     public class TrashCompartment
     {
-        public Dictionary<string, int> Wrappers = new Dictionary<string, int>();
+        private Dictionary<string, int> Wrappers = new Dictionary<string, int>();
  
         public void AddWrapper(string wrapper)
         {

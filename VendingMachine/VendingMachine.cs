@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VendingMachine.States;
 
 namespace VendingMachine
@@ -35,6 +36,29 @@ namespace VendingMachine
         public void SetState(IVendingMachineState state)
         {
             CurrentState = state;
+        }
+
+        public void ReadInput()
+        {
+            while (true)
+            {
+                var input = Console.ReadLine().ToUpper();
+                if (input != "")
+                {
+                    if (input[0] == '$' && double.TryParse(input.Substring(1), out var money))
+                    {
+                        InsertMoney(money);
+                    }
+                    else if (input.ToUpper() == "TRASH")
+                    {
+                        Trash.Report();
+                    }
+                    else
+                    {
+                       SelectItem(input);
+                    }
+                }
+            }
         }
 
         public VendingMachine()
