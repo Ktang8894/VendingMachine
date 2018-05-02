@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine.States
 {
-    class MoneyInsertedState : IVendingMachineState
+    public class MoneyInsertedState : IVendingMachineState
     {
         private VendingMachine _vendingMachine;
 
@@ -23,7 +23,7 @@
             }
             else
             {
-                itemQueue.Status(); //FOR DEBUGGING PURPOSES
+                itemQueue.Status(); //FOR DEBUGGING
                 _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem().Name);
                 _vendingMachine.MoneyInserted = 0;
                 _vendingMachine.SetState(_vendingMachine.NoMoneyInsertedState);

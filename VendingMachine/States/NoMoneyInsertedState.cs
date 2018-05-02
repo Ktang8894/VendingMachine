@@ -1,6 +1,6 @@
 ﻿namespace VendingMachine.States
 {
-    class NoMoneyInsertedState : IVendingMachineState
+    public class NoMoneyInsertedState : IVendingMachineState
     {
         private VendingMachine _vendingMachine;
 

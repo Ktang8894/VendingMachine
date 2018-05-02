@@ -8,7 +8,7 @@ namespace VendingMachineTests
     {
         private VendingMachine.VendingMachine Vm { get; set; }
         private ItemQueue Iq { get; set; }
-        private string shelfName = "TestShelf";
+        private string QueueName = "TestShelf";
 
         [SetUp]
         public void SetUp()
@@ -19,17 +19,17 @@ namespace VendingMachineTests
             {
                 Iq.QueueItem(new Item("TestName" + i, "TestFlavor" + i, "TestWrapperColor" + i));
             }
-            Vm.ItemQueues.Add("TestQueue", Iq);
+            Vm.ItemQueues.Add(QueueName, Iq);
         }
 
         [Test]
         public void VendingMachine_SetState_Test()
         {
             Vm.SetState(Vm.MoneyInsertedState);
-            Assert.AreEqual(Vm.CurrentState, Vm.MoneyInsertedState);
+            Assert.That(Vm.CurrentState == Vm.MoneyInsertedState);
 
             Vm.SetState(Vm.NoMoneyInsertedState);
-            Assert.AreEqual(Vm.CurrentState, Vm.NoMoneyInsertedState);
+            Assert.That(Vm.CurrentState == Vm.NoMoneyInsertedState);
         }
 
         [Test]
@@ -37,10 +37,10 @@ namespace VendingMachineTests
         {
             Vm.SetState(Vm.NoMoneyInsertedState);
             Vm.InsertMoney(11.50);
-            Assert.AreEqual(Vm.MoneyInserted, 11.50);
+            Assert.That(Vm.MoneyInserted.Equals(11.50));
             Vm.InsertMoney(2000.50);
-            Assert.AreEqual(Vm.MoneyInserted, 2012);
-            Assert.AreEqual(Vm.CurrentState, Vm.MoneyInsertedState);
+            Assert.That(Vm.MoneyInserted.Equals(2012));
+            Assert.That(Vm.CurrentState == Vm.MoneyInsertedState);
         }
 
         [Test]
@@ -55,7 +55,7 @@ namespace VendingMachineTests
         [Test]
         public void VendingMachine_SelectItem_Test()
         {
-            Assert.DoesNotThrow(() => Vm.SelectItem(shelfName));
+            Assert.DoesNotThrow(() => Vm.SelectItem(QueueName));
         }
     }
 }

@@ -54,6 +54,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ItemQueueTest.cs" />
+    <Compile Include="MoneyInsertedStateTest.cs" />
+    <Compile Include="NoMoneyInsertedStateTest.cs" />
     <Compile Include="VendingMachineTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
