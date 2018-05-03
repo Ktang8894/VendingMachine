@@ -70,6 +70,15 @@ namespace VendingMachine {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DISPENSING ITEM.
+        /// </summary>
+        internal static string DispensingItem {
+            get {
+                return ResourceManager.GetString("DispensingItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to To insert money, enter &apos;$&apos; followed by the currency value
         ///To select an item, enter item coordinates, i.e. &apos;A1&apos; (default range [A-D, 1-5]).
         /// </summary>

@@ -120,6 +120,9 @@
   <data name="CurrentBalance" xml:space="preserve">
     <value>CURRENT BALANCE: $</value>
   </data>
+  <data name="DispensingItem" xml:space="preserve">
+    <value>DISPENSING ITEM</value>
+  </data>
   <data name="Instructions" xml:space="preserve">
     <value>To insert money, enter '$' followed by the currency value
 To select an item, enter item coordinates, i.e. 'A1' (default range [A-D, 1-5])</value>

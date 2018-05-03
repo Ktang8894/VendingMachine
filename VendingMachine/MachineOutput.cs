@@ -25,6 +25,11 @@ namespace VendingMachine
             Console.WriteLine(OutputStrings.SoldOut);
         }
 
+        public static void DisplayDispensingItem()
+        {
+            Console.WriteLine(OutputStrings.DispensingItem);
+        }
+
         public static void DisplayInstructions()
         {
             Console.WriteLine(OutputStrings.Instructions);

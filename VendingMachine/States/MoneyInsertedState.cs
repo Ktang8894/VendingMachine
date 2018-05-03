@@ -23,6 +23,7 @@
             }
             else
             {
+                MachineOutput.DisplayDispensingItem();
                 itemQueue.Status(); //FOR DEBUGGING
                 _vendingMachine.Trash.AddWrapper(itemQueue.DispenseItem());
                 _vendingMachine.MoneyInserted = 0;
