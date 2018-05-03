@@ -48,7 +48,7 @@ Another design choice that I considered was creating a separate table for the Tr
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
 	- Creates the Items Table
-3. To populate the table with test values, execute the query in **/DatabaseDesign/PouplateTables.sql**
+3. To populate the table with test values, execute the query in **/DatabaseDesign/PopulateTables.sql**
 
 ## 3. SELECT Statements
 
