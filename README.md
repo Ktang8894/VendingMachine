@@ -44,7 +44,7 @@ Another design choice that I considered was creating a separate table for the Tr
 
 ### Setup
 
-1. In your database, execute the script in **CreateVendingMachineStoredProc.sql** to create the VendingMachine.CreateVendingMachine stored procedure
+1. In your database, execute the script in **/DatabaseDesign/CreateVendingMachineStoredProc.sql** to create the VendingMachine.CreateVendingMachine stored procedure
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
 	- Creates the Items Table
