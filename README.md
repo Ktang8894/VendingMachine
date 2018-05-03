@@ -5,6 +5,10 @@ Written in C# (.NET Framework 4.6.1) using Visual Studio 2017
 
 ## 1. VendingMachine Program
 
+### Execution
+
+To execute the program outside of Visual Studio, run **/VendingMachine/bin/Debug/VendingMachine.exe**.
+
 ### State Diagram
 ![VendingMachine_StateDiagram](/VendingMachine_StateDiagram.jpg)
 
