@@ -6,7 +6,7 @@ ON i.ItemId = iq.ItemId
 WHERE Flavor = 'SOUR'
 AND StockCount > 0;
 
---Most common Wrapper Color in the Trash Compartment
+--Most common wrapper color in the Trash Compartment
 SELECT WrapperColor
 FROM VendingMachine.Item i
 INNER JOIN VendingMachine.ItemQueue iq
