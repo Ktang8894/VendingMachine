@@ -6,8 +6,9 @@ namespace VendingMachine
     {
         private Queue<Item> _itemQueue;
         private double _price { get; set; }
-        
-        public void Status() //FOR DEBUGGING
+
+        //Intentionally left here for debugging/visibility. In an actual release this would not be present.
+        public void Status() 
         {
             MachineOutput.QueueStatus(_itemQueue.Peek().Name, _itemQueue.Peek().Flavor, _itemQueue.Peek().WrapperColor, (_itemQueue.Count - 1));
         }

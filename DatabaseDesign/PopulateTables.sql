@@ -1,9 +1,15 @@
-USE VendingMachineDB
-GO
+INSERT INTO VendingMachine.Item(Name, Flavor, WrapperColor)
+VALUES ('Sour Apple', 'Sour', 'Green'),
+('Red Hot', 'Spicy', 'Red'),
+('Purple', 'Sweet', 'Purple'),
+('Yummy Defrosting Salt', 'Salty', 'Blue'),
+('Actual Lemons', 'Sour', 'Yellow'),
+('Trash Demo', 'Sour', 'Green');
 
-INSERT INTO VendingMachine.Item(Name, Flavor, WrapperColor, Price, StockCount, TrashCount)
-VALUES ('Sour Apple', 'Sour', 'Green', 1.5, 10, 0),
-('Red Hot', 'Spicy', 'Red', 1.5, 10, 0),
-('Purple', 'Sweet', 'Purple', 1.5, 10, 0),
-('Literal Salt', 'Salty', 'Blue', 1.5, 8, 2),
-('Lemons', 'Sour', 'Yellow', 1.5, 10, 0)
+INSERT INTO VendingMachine.ItemQueue(ItemId, Price, StockCount, TrashCount)
+VALUES (1, 1.5, 10, 0),
+(2, 1.0, 10, 0),
+(4, 1.5, 10, 0),
+(3, 2.5, 10, 0),
+(5, 1.5, 10, 0),
+(6, 1.5, 4, 6);

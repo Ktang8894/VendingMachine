@@ -18,13 +18,13 @@ The Vending Machine was designed using the concept of the State design pattern. 
 
 **Item.cs** - Represents an individual item that can be inserted added in a queue within the vending machine. Contains the following properties: Name, Flavor, WrapperColor. The class is loosely defined as 'Items' (rather than 'Candy' for example) for flexibility/reusability, as vending machines can essentially dispense whatever is stocked in the queues.
 
-**ItemQueue.cs** - Represents an item queue within the vending machine using a Queue<Item>. Contains the Price property (since the price of an item is declared on the physical queue's level by the vending machine owner, and not determined by an independent Item). Has basic functions for adding and dispensing items, checking prices, checking stock, and reporting queue status, which includes the  queue's items' name, flavor, and wrapper color, as well as number of remaining items(for debugging).
+**ItemQueue.cs** - Represents an item queue within the vending machine using a Queue<Item>. Contains the Price property (since the price of an item is declared on the physical queue's level by the vending machine owner, and not determined by an independent Item). Has basic functions for adding and dispensing items, checking prices, checking stock, and reporting queue status (for debugging purposes), which includes the queue's items' name, flavor, and wrapper color, as well as number of remaining items.
 
 **TrashCompartment.cs** - Represents the trash compartment, where item wrappers are automatically added after the item is dispensed. Has a function to report the number of wrappers for each item (by name).
 
 **VendingMachine.cs** - Represents the vending machine and takes user input in a loop. Contains the total amount of inserted money, ItemQueues, a TrashCompartment, and state instances. Uses states to determine the behavior of when money is inserted and when items are selected. The ItemQueues are represented by a Dictionary<string, ItemQueues> object, where the key is the letter-number combination that represents the position in the machine, which is what the user inputs to select an item. Each shelf (each which is supposed to contain items of a different flavor) is not assigned to an individual flavor by design. This is because a vending machine should be open to whatever item it is stocked with, and it is up to the stocker to stock the shelves by flavor. In this program, the Stocker class does this and can be denoted by the letter in the letter-number combination.
 
-**IVendingmachineState.cs** (*NTERFACE*) - Interface for vending machine states, which include signatures for the InsertMoney and SelectItem functions.
+**IVendingmachineState.cs** (*INTERFACE*) - Interface for vending machine states, which include signatures for the InsertMoney and SelectItem functions.
 
 **NoMoneyInsertedState.cs** - Implements the IVendingMachineState interface. Represents a state where no money has been inserted into the vending machine and the current balance is 0.
 
