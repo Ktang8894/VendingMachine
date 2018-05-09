@@ -21,4 +21,4 @@ SELECT Flavor, SUM(StockCount) AS FlavorCount
 FROM VendingMachine.Item i
 INNER JOIN VendingMachine.ItemQueue iq
 ON i.ItemId = iq.ItemId
-GROUP BY Flavor
+GROUP BY Flavor;
