@@ -12,7 +12,7 @@ To execute the program outside of Visual Studio, run **/VendingMachine/bin/Debug
 ### State Diagram
 ![VendingMachine_StateDiagram](/VendingMachine_StateDiagram.jpg)
 
-The Vending Machine was designed using the concept of the State design pattern. There are two states (NoMoneyInsertedState, MoneyInsertedState) which determine the behavior of the 
+The Vending Machine was designed using the concept of the State design pattern. There are two states, NoMoneyInsertedState and MoneyInsertedState, which determine the behavior of the 
 vending machine when the actor inserts money or selects an item. To dispense an item, the user must first insert the sufficient amount of money for their item of choice, and then select 
 the item. Selecting an item with no money inserted will cause the vending machine to report the cost of that item, and selecting an item with insufficient money inserted will report the 
 remaining funds needed to reach the cost of the item. The vending machine will not return any change and all excess money inserted will be consumed upon item selection.
@@ -33,9 +33,9 @@ each item (by name).
 Uses states to determine the behavior of when money is inserted and when items are selected. The ItemQueues are represented by a Dictionary<string, ItemQueues> object, where the key is 
 the letter-number combination that represents the position in the machine, which is what the user inputs to select an item. Each shelf (each which is supposed to contain items of a 
 different flavor) is not assigned to an individual flavor by design. This is because a vending machine should be open to whatever item it is stocked with, and it is up to the stocker to 
-stock the shelves by flavor. In this program, the Stocker class does this and can be denoted by the letter in the letter-number combination.
+stock the shelves by flavor. In this program, the Stocker class does this and the shelf can be denoted by the letter in the letter-number combination.
 
-**IVendingmachineState.cs** (*INTERFACE*) - Interface for vending machine states, which include signatures for the InsertMoney and SelectItem functions.
+**IVendingmachineState.cs** (*INTERFACE*) - Interface for vending machine states, which include signatures for the InsertMoney and SelectItem methods.
 
 **NoMoneyInsertedState.cs** - Implements the IVendingMachineState interface. Represents a state where no money has been inserted into the vending machine and the current balance is 0.
 
@@ -48,7 +48,7 @@ in the *app.config* file.
 **MachineOutput.cs** - The program's method of displaying messages to the console.
 
 **Stocker.cs** - Used for simulation/demo purposes, as real hardware limitations enable the vending machine program to not care about how items are stocked. Represents a stocker filling 
-the vending machine's queues. In this case, the shelves categorized by flavor and the queues on each shelf are categorized by color (or name, where the name is a combination of the 
+the vending machine's queues. In this case, the shelves are categorized by flavor and the queues on each shelf are categorized by color (or name, where the name is a combination of the 
 color + flavor). 
 
 
@@ -63,8 +63,8 @@ object, including name, flavor, and wrapper color fields, as well as an ItemId w
 and stock, and has an ItemId which is a foreign key that references the Item table's ItemId. The TrashCompartment table simply has a field for the wrapper count, and an ItemId foreign key 
 which also references VendingMachine.Item.ItemId. 
 
-Note that this would not be the preferred schema design in a practical situation and is specifically designed to model the objects in the program. In such a case, an approach that reduces 
-the amount of joins necessary and that avoids over-normalization would be taken, which would involve combining the three tables into one.
+Note that this would not be the preferred schema design in a practical situation and is specifically designed to model the objects in the program. In such a case, an approach that avoids 
+over-normalization would be taken, reducing the amount of joins needed for simple operations, and would involve combining the three tables into one.
 
 ### Setup
 
