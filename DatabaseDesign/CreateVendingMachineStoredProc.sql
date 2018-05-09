@@ -20,6 +20,9 @@ BEGIN
 	IF OBJECT_ID('VendingMachine.ItemQueue', 'U') IS NOT NULL
 		DROP TABLE VendingMachine.ItemQueue;
 
+	IF OBJECT_ID('VendingMachine.TrashCompartment', 'U') IS NOT NULL
+		DROP TABLE VendingMachine.TrashCompartment;
+
 	IF OBJECT_ID('VendingMachine.Item', 'U') IS NOT NULL
 		DROP TABLE VendingMachine.Item;
 
@@ -33,8 +36,12 @@ BEGIN
 	CREATE TABLE VendingMachine.ItemQueue (
 		ItemId int UNIQUE NOT NULL FOREIGN KEY REFERENCES VendingMachine.Item(ItemId),
 		Price decimal(4, 2),
-		StockCount int NOT NULL,
-		TrashCount int NOT NULL
+		StockCount int NOT NULL
+	);
+
+	CREATE TABLE VendingMachine.TrashCompartment (
+		ItemId int UNIQUE NOT NULL FOREIGN KEY REFERENCES VendingMachine.Item(ItemId),
+		WrapperCount int NOT NULL
 	);
 END
 GO
