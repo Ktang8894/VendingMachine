@@ -79,47 +79,32 @@ the amount of joins necessary and that avoids over-normalization would be taken,
 These SELECT statements can be found in **/DatabaseDesign/SelectStatements.sql**
 
 ### Sour Items
-
+```
 SELECT Name
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.ItemQueue iq
-
 ON i.ItemId = iq.ItemId
-
 WHERE Flavor = 'SOUR'
-
 AND StockCount > 0;
-
+```
 
 ### Most common wrapper color in the Trash Compartment
-
+```
 SELECT WrapperColor
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.TrashCompartment tc
-
 ON i.ItemId = tc.ItemId
-
 WHERE tc.WrapperCount = (
-
-	SELECT MAX(VendingMachine.TrashCompartment.WrapperCount) 
-	
-	FROM VendingMachine.TrashCompartment)
-	
+	SELECT MAX(VendingMachine.TrashCompartment.WrapperCount) 	
+	FROM VendingMachine.TrashCompartment)	
 AND tc.WrapperCount > 0;
-
+```
 
 ### Amount of candies on each shelf
-
+```
 SELECT Flavor, SUM(StockCount) AS FlavorCount
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.ItemQueue iq
-
 ON i.ItemId = iq.ItemId
-
-GROUP BY Flavor
+GROUP BY Flavor;
+```
