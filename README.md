@@ -44,7 +44,7 @@ The Vending Machine was designed using the concept of the State design pattern. 
 
 The VendingMachine schema was designed based on the object models in the VendingMachine program. The primary objects that the VendingMachine holds other than the states and the current amount of money inserted (which is not necessary in a database) are the TrashCompartment and ItemQueues (which contains Items). The Item table contains the basic information of an Item object, including name, flavor, and wrapper color fields, as well as an ItemId which acts as the table's primary key. The ItemQueue table, like the class, contains information on the price and stock, and has an ItemId which is a foreign key that references the Item table's ItemId. The TrashCompartment table simply has a field for the wrapper count, and an ItemId foreign key which also references VendingMachine.Item.ItemId. 
 
-Note that this would not be the preferred schema design in a practical situation and is specifically designed to model the objects in the program. An approach that reduces the amount of joins necessary would be taken and would involve concatenating the three tables into one.
+Note that this would not be the preferred schema design in a practical situation and is specifically designed to model the objects in the program. In such a case, an approach that reduces the amount of joins necessary and that avoids over-normalization would be taken, which would involve combining the three tables into one.
 
 ### Setup
 
