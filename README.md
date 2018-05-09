@@ -71,7 +71,7 @@ the amount of joins necessary and that avoids over-normalization would be taken,
 1. In your database, execute the script in **/DatabaseDesign/CreateVendingMachineStoredProc.sql** to create the VendingMachine.CreateVendingMachine stored procedure
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
-	- Creates the Items Table
+	- Creates the Items, ItemQueues, and TrashCompartment Tables
 3. To populate the table with test values, execute the query in **/DatabaseDesign/PopulateTables.sql**
 
 ## 3. SELECT Statements
