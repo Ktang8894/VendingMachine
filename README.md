@@ -71,7 +71,7 @@ the amount of joins necessary and that avoids over-normalization would be taken,
 1. In your database, execute the script in **/DatabaseDesign/CreateVendingMachineStoredProc.sql** to create the VendingMachine.CreateVendingMachine stored procedure
 2. Execute the stored procedure (EXEC VendingMachine.CreateVendingMachine)
 	- Creates the VendingMachine schema
-	- Creates the Items Table
+	- Creates the Items, ItemQueues, and TrashCompartment Tables
 3. To populate the table with test values, execute the query in **/DatabaseDesign/PopulateTables.sql**
 
 ## 3. SELECT Statements
@@ -79,47 +79,32 @@ the amount of joins necessary and that avoids over-normalization would be taken,
 These SELECT statements can be found in **/DatabaseDesign/SelectStatements.sql**
 
 ### Sour Items
-
+```
 SELECT Name
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.ItemQueue iq
-
 ON i.ItemId = iq.ItemId
-
 WHERE Flavor = 'SOUR'
-
 AND StockCount > 0;
-
+```
 
 ### Most common wrapper color in the Trash Compartment
-
+```
 SELECT WrapperColor
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.TrashCompartment tc
-
 ON i.ItemId = tc.ItemId
-
 WHERE tc.WrapperCount = (
-
-	SELECT MAX(VendingMachine.TrashCompartment.WrapperCount) 
-	
-	FROM VendingMachine.TrashCompartment)
-	
+	SELECT MAX(VendingMachine.TrashCompartment.WrapperCount) 	
+	FROM VendingMachine.TrashCompartment)	
 AND tc.WrapperCount > 0;
-
+```
 
 ### Amount of candies on each shelf
-
+```
 SELECT Flavor, SUM(StockCount) AS FlavorCount
-
 FROM VendingMachine.Item i
-
 INNER JOIN VendingMachine.ItemQueue iq
-
 ON i.ItemId = iq.ItemId
-
-GROUP BY Flavor
+GROUP BY Flavor;
+```
